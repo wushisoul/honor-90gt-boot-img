@@ -11,10 +11,11 @@
 
 | 文件 | 大小 | sha256 |
 |---|---|---|
-| `boot.img` | 100,663,296 B | `a69c91f1e3a0e22c8b13d84a9e7af6d8eba60771ef9a0180c7710dc9c6415be1` |
-| `Image`（裸 ARM64） | 52,967,936 B | `571a566de0f81acab1f305d94f84671052b9dc666e96fcbb6bd4aba3bbd8870d` |
+| `bin/boot.img` | 100,663,296 B | `a69c91f1e3a0e22c8b13d84a9e7af6d8eba60771ef9a0180c7710dc9c6415be1` |
+| `bin/Image`（裸 ARM64） | 52,967,936 B | `571a566de0f81acab1f305d94f84671052b9dc666e96fcbb6bd4aba3bbd8870d` |
 
-`boot.img` 未放入本仓库（96 MB 不适合进 git）。按下方步骤可自行从官方包提取，全程只传输约 100 MB。
+两个文件均已随仓库分发。GitHub 对单文件 50 MB 以上会提示改用 LFS（硬上限 100 MB），
+`bin/boot.img` 96 MB、`bin/Image` 50.5 MB 都在上限内，直接 clone 即可，无需 LFS。
 
 ## 为什么绕这么远
 
@@ -88,5 +89,6 @@ tools/ota_*.py                       设备端请求抓取与 URL 监听
 
 ## 说明
 
-仅用于本人设备的固件分析与逆向研究。`boot.img` / `Image` 为厂商版权文件，未随仓库分发；
+仅用于本人设备的固件分析与逆向研究。`bin/` 下的 `boot.img` / `Image` 为厂商版权文件，
+版权归荣耀所有，此处仅作个人研究与备份用途，请勿商用或再分发；
 脚本只做公开 OTA 服务器上的 HTTP Range 读取与格式解析。
